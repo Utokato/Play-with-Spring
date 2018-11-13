@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.llman.dao.mapper.BookDetailMapper">
+
+    <!-- 具体方法，以注解的形式，直接写在mapper接口的方法注解上 -->
+    <!-- 其实这张xml文件可以省略 -->
+
+</mapper>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.llman.dao.mapper.BookMapper">
+
+    <insert id="saveBook" parameterType="cn.llman.beans.dataobject.Book">
+		INSERT INTO book
+		(id,name,author,version,pages,price,create_time,update_time) VALUES
+		(#{id},#{name},#{author},#{version},#{pages},#{price},#{createTime},#{updateTime})
+	</insert>
+
+    <update id="updateBookById"
+            parameterType="cn.llman.beans.dataobject.Book">
+        UPDATE book SET
+        <if test=" book.name!=null and book.name!='' ">
+            name = #{book.name},
+        </if>
+        <if test=" book.author!=null and book.author!='' ">
+            author = #{book.author},
+        </if>
+        <if test=" book.version!=null and book.version!='' ">
+            version = #{book.version},
+        </if>
+        <if test=" book.pages!=null ">
+            pages = #{book.pages},
+        </if>
+        <if test=" book.price!=null ">
+            price = #{book.price}
+        </if>
+        WHERE id = #{id}
+    </update>
+
+    <select id="queryBookById" parameterType="string" resultType="cn.llman.beans.dataobject.Book">
+        <!-- 1. 根据用户id查询用户 -->
+        <!-- 2. id必须和Mapper接口方法名一致 -->
+        <!-- 3. parameterType必须和接口方法参数类型一致 -->
+        <!-- 4. resultType必须和接口方法返回值类型一致 -->
+        SELECT * FROM book WHERE id = #{id}
+    </select>
+
+    <select id="queryBookListByName" parameterType="string"
+            resultType="cn.llman.beans.dataobject.Book">
+		SELECT * FROM book WHERE name LIKE '%${name}%'
+	</select>
+
+    <select id="queryBookList" resultType="cn.llman.beans.dataobject.Book">
+		SELECT * FROM book
+	</select>
+
+    <!-- 删除书籍 -->
+    <delete id="deleteBookById" parameterType="string">
+		DELETE FROM book WHERE
+		id = #{id}
+	</delete>
+
+
+</mapper>
