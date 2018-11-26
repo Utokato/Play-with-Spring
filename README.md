@@ -18,7 +18,7 @@
 | :-------------------------------------: | :--------: | :------: |
 |      Spring + SpringMVC + Mybatis       |   MySQL    |  已完成  |
 |    Springboot  +SpringMVC + Mybatis     |   MySQL    |  已完成  |
-|   Springboot  +SpringMVC + SpringJPA    |   MySQL    |  未完成  |
+|   Springboot  +SpringMVC + SpringJPA    |   MySQL    |  已完成  |
 | Springboot  +SpringWebFlux + SpringData |  MongoDB   |  未完成  |
 |                 ......                  |   ......   |  ......  |
 
